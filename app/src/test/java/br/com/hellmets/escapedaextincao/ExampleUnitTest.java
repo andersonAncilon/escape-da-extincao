@@ -1,4 +1,4 @@
-package br.com.hellmets.motocerol;
+package br.com.hellmets.escapedaextincao;
 
 import org.junit.Test;
 

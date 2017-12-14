@@ -6,15 +6,15 @@
  ********************************************/
 
 //Engine package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used packages
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 
-import br.com.hellmets.motocerol.CenaAbertura;
-import br.com.hellmets.motocerol.CenaMenu;
+import br.com.hellmets.escapedaextincao.CenaGame;
+import br.com.hellmets.escapedaextincao.CenaAbertura;
+import br.com.hellmets.escapedaextincao.CenaGameOver;
 
 public class AGActivityGame extends Activity
 {
@@ -47,10 +47,14 @@ public class AGActivityGame extends Activity
 		this.vrManager = new AGGameManager(this, true);
 
 		CenaAbertura abertura = new CenaAbertura(vrManager);
-		CenaMenu menu = new CenaMenu(vrManager);
+        CenaGame game = new CenaGame(vrManager);
+        CenaGameOver gameOver = new CenaGameOver(vrManager);
 
 		vrManager.addScene(abertura);
-		vrManager.addScene(menu);
+        vrManager.addScene(game);
+        vrManager.addScene(gameOver);
+
+
 
 
 	}

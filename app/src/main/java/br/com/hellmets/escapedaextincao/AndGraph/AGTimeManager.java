@@ -6,15 +6,15 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 public class AGTimeManager 
 {
-	//Attibutes
+    private static final int MININTERVAL = 20;
+    //Attibutes
 	private static long 	lLastFrameTime = 0;
 	private static long 	lCurrentFrameTime = 0;
 	private static long 	lCurrentTime = 0;
-	private static final int MININTERVAL = 20;
 	
 	/*******************************************
 	* Name: AGTimeManager()

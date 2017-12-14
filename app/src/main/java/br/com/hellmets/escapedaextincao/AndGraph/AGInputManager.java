@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used packages
 import android.opengl.GLSurfaceView;

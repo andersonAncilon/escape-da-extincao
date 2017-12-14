@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used Packages
 import android.app.Activity;
@@ -20,6 +20,12 @@ import android.view.WindowManager;
 
 public class AGAccelerometer implements SensorEventListener
 {
+	//Constants of Accelerometer (rotation array)
+	private final int axisSwap[][] = {
+			{-1, -1, 0, 1},     // ROTATION_0
+			{1, -1, 1, 0},     // ROTATION_90
+			{1, 1, 0, 1},     // ROTATION_180
+			{-1, 1, 1, 0}}; // ROTATION_270
 	//Class Attributes
 	public float fAccelX = 0.0f, fAccelY = 0.0f, fAccelZ = 0.0f;
 	private int iRotation = 0;
@@ -28,13 +34,6 @@ public class AGAccelerometer implements SensorEventListener
 	private boolean bAccelerated = false;
 	private SensorManager vrSensorManager = null;
 	private Sensor vrSensor = null;
-	
-	//Constants of Accelerometer (rotation array)
-    private final int axisSwap[][] = {
-    { -1,  -1,  0,  1  },     // ROTATION_0 
-    {  1,  -1,  1,  0  },     // ROTATION_90 
-    {  1,   1,  0,  1  },     // ROTATION_180 
-    { -1,   1,  1,  0  }  }; // ROTATION_270 
 	
 	/*******************************************
 	* Name: init()

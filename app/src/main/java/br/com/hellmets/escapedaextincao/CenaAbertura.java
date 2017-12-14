@@ -1,16 +1,13 @@
-package br.com.hellmets.motocerol;
+package br.com.hellmets.escapedaextincao;
 
-import br.com.hellmets.motocerol.AndGraph.AGGameManager;
-import br.com.hellmets.motocerol.AndGraph.AGInputManager;
-import br.com.hellmets.motocerol.AndGraph.AGScene;
-import br.com.hellmets.motocerol.AndGraph.AGScreenManager;
-import br.com.hellmets.motocerol.AndGraph.AGSprite;
-import br.com.hellmets.motocerol.AndGraph.AGTimeManager;
-import br.com.hellmets.motocerol.AndGraph.AGTimer;
+import br.com.hellmets.escapedaextincao.AndGraph.AGGameManager;
+import br.com.hellmets.escapedaextincao.AndGraph.AGInputManager;
+import br.com.hellmets.escapedaextincao.AndGraph.AGScreenManager;
+import br.com.hellmets.escapedaextincao.AndGraph.AGSoundManager;
+import br.com.hellmets.escapedaextincao.AndGraph.AGSprite;
+import br.com.hellmets.escapedaextincao.AndGraph.AGTimer;
+import br.com.hellmets.escapedaextincao.AndGraph.AGScene;
 
-/**
- * Created by breno on 16/11/2017.
- */
 
 public class CenaAbertura extends AGScene
 {
@@ -27,6 +24,10 @@ public class CenaAbertura extends AGScene
     {
         tempo = new AGTimer(4000);
         setSceneBackgroundColor(1,0,0);
+
+        AGSoundManager.vrMusic.loadMusic("tema.ogg", true);
+        AGSoundManager.vrMusic.setVolume(0.6f, 0.6f);
+        AGSoundManager.vrMusic.play();
 
         botao = this.createSprite(R.mipmap.btnjogar, 1,1);
         botao.setScreenPercent(25,15);
@@ -55,6 +56,7 @@ public class CenaAbertura extends AGScene
         {
             if (botao.collide(AGInputManager.vrTouchEvents.getLastPosition()))
             {
+
                 this.vrGameManager.setCurrentScene(1);
                 return;
             }

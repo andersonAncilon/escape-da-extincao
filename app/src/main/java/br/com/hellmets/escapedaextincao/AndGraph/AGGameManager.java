@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used packages
 
@@ -23,9 +23,9 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class AGGameManager implements Renderer
 {
+	public static GL10 vrOpenGL = null;
 	//Attibutes
 	public Activity vrActivity = null;
-	public static GL10 vrOpenGL = null;
 	private GLSurfaceView vrDrawSurface = null;
 	private ArrayList<AGScene> vrScenes = null;
 	private int FRAME_SIZE = 1;

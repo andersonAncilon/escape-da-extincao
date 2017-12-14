@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used packages
 
@@ -18,8 +18,6 @@ import android.opengl.GLUtils;
 import java.util.ArrayList;
 
 import javax.microedition.khronos.opengles.GL10;
-
-import br.com.hellmets.motocerol.R;
 
 //Local class used to store texture data (Package Access)
 class AGTextureData

@@ -6,21 +6,21 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 import java.util.ArrayList;
 
 public abstract class AGScene
 {
-	//Attibutes
-	private ArrayList<AGSprite> vrSprites = null;
-	protected AGGameManager vrGameManager = null;
 	public boolean bSceneStarted = false;
 	public float fRed = 0.0f;
 	public float fGreen = 0.0f;
 	public float fBlue = 0.0f;
-	
-	/*******************************************
+    protected AGGameManager vrGameManager = null;
+    //Attibutes
+    private ArrayList<AGSprite> vrSprites = null;
+
+    /*******************************************
 	* Name: CAGScene()
 	* Description: Scene construtor
 	* Parameters: CAGameManager

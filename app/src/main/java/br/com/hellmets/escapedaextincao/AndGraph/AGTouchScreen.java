@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used packages
 import android.view.MotionEvent;
@@ -17,10 +17,10 @@ public class AGTouchScreen implements OnTouchListener
 {
 	//Attributes
 	public float fPosX = 0, fPosY = 0;
-	private int iCurrentEvent = 0;
 	public boolean bBackButtonClicked = false;
-	
-	/********************************************
+    private int iCurrentEvent = 0;
+
+    /********************************************
 	* Name: getLasPosition()
 	* Description: returns the last event position
 	* Parameters: none

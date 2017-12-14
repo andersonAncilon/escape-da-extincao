@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 public class AGVector2D 
 {
@@ -48,17 +48,6 @@ public class AGVector2D
 	}
 	
 	/*******************************************
-	* Name: getY()
-	* Description: returns Y value
-	* Parameters: none
-	* Returns: float
-	******************************************/
-	public float getY()
-	{
-		return fY;
-	}
-	
-	/*******************************************
 	* Name: setX()
 	* Description: set X value
 	* Parameters: float
@@ -67,7 +56,17 @@ public class AGVector2D
 	public void setX(float pX)
 	{
 		fX = pX;
-	}
+    }
+
+    /*******************************************
+     * Name: getY()
+     * Description: returns Y value
+     * Parameters: none
+     * Returns: float
+     ******************************************/
+    public float getY() {
+        return fY;
+    }
 	
 	/*******************************************
 	* Name: setY()

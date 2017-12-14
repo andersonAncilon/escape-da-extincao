@@ -6,7 +6,7 @@
  ********************************************/
 
 //Engine Package
-package br.com.hellmets.motocerol.AndGraph;
+package br.com.hellmets.escapedaextincao.AndGraph;
 
 //Used Packages
 
@@ -14,8 +14,6 @@ import java.nio.FloatBuffer;
 import java.util.ArrayList;
 
 import javax.microedition.khronos.opengles.GL10;
-
-import br.com.hellmets.motocerol.R;
 
 public class AGSprite 
 {
@@ -131,18 +129,6 @@ public class AGSprite
 	}
 	
 	/*******************************************
-	* Name: reloadTexture()
-	* Description: reload a texture image id
-	* Parameters: GL10
-	* Returns: none
-	******************************************/
-	public void reloadTexture(GL10 pOpenGL)
-	{
-		vrOpenGL = pOpenGL;
-		iTextureCode = AGTextureManager.loadTexture(vrOpenGL, iImageCode);
-	}
-
-	/*******************************************
 	 * Name: setTextureCode()
 	 * Description: sets a image source
 	 * Parameters: int
@@ -153,8 +139,19 @@ public class AGSprite
 		iImageCode = pCode;
 		iTextureCode = AGTextureManager.loadTexture(vrOpenGL, iImageCode);
 	}
-	
-	/*******************************************
+
+    /*******************************************
+     * Name: reloadTexture()
+     * Description: reload a texture image id
+     * Parameters: GL10
+     * Returns: none
+     ******************************************/
+    public void reloadTexture(GL10 pOpenGL) {
+        vrOpenGL = pOpenGL;
+        iTextureCode = AGTextureManager.loadTexture(vrOpenGL, iImageCode);
+    }
+
+    /*******************************************
 	* Name: generateFrames()
 	* Description: used to generate texture coords frames
 	* Parameters: none
@@ -412,28 +409,6 @@ public class AGSprite
 		return vetAnimations.size();
 	}
 	
-	/*******************************************
-	* Name: setCurrentAnimation()
-	* Description: configures the current animation index
-	* Parameters: int
-	* Returns: none
-	*******************************************/
-	public void setCurrentAnimation(int iAnim)
-	{
-		//Test if Sprite has animations to be set
-		if (vetAnimations.size() == 0)
-		{
-			return;
-		}
-		
-		//Test the animation index
-		if(iAnim != iCurrentAnimation && iAnim < vetAnimations.size())
-		{
-			iCurrentAnimation = iAnim;
-			vetAnimations.get(iCurrentAnimation).restart();
-		}
-	}
-	
 	/*********************************************
 	* Name: restartAnimation()
 	* Description: restart current animation
@@ -458,9 +433,27 @@ public class AGSprite
 	{
 		return vetAnimations.get(iCurrentAnimation);
 	}
-	
-	
-	/*******************************************
+
+    /*******************************************
+     * Name: setCurrentAnimation()
+     * Description: configures the current animation index
+     * Parameters: int
+     * Returns: none
+     *******************************************/
+    public void setCurrentAnimation(int iAnim) {
+        //Test if Sprite has animations to be set
+        if (vetAnimations.size() == 0) {
+            return;
+        }
+
+        //Test the animation index
+        if (iAnim != iCurrentAnimation && iAnim < vetAnimations.size()) {
+            iCurrentAnimation = iAnim;
+            vetAnimations.get(iCurrentAnimation).restart();
+        }
+    }
+
+    /*******************************************
 	* Name: getCurrentAnimationIndex()
 	* Description: returns the index of current animation
 	* Parameters: none
