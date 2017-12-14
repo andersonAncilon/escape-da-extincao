@@ -12,6 +12,7 @@ package br.com.hellmets.escapedaextincao.AndGraph;
 import android.app.Activity;
 import android.os.Bundle;
 
+import br.com.hellmets.escapedaextincao.CenaCredito;
 import br.com.hellmets.escapedaextincao.CenaGame;
 import br.com.hellmets.escapedaextincao.CenaAbertura;
 import br.com.hellmets.escapedaextincao.CenaGameOver;
@@ -49,10 +50,12 @@ public class AGActivityGame extends Activity
 		CenaAbertura abertura = new CenaAbertura(vrManager);
         CenaGame game = new CenaGame(vrManager);
         CenaGameOver gameOver = new CenaGameOver(vrManager);
+		CenaCredito credito = new CenaCredito(vrManager);
 
 		vrManager.addScene(abertura);
         vrManager.addScene(game);
         vrManager.addScene(gameOver);
+		vrManager.addScene(credito);
 
 
 

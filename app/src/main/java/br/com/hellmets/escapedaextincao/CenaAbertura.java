@@ -12,7 +12,10 @@ import br.com.hellmets.escapedaextincao.AndGraph.AGScene;
 public class CenaAbertura extends AGScene
 {
     AGTimer tempo = null;
-    AGSprite botao = null;
+    AGSprite jogar = null;
+    AGSprite creditos = null;
+    AGSprite sair = null;
+    AGSprite nomeJogo = null;
 
     public CenaAbertura(AGGameManager manager)
     {
@@ -29,12 +32,23 @@ public class CenaAbertura extends AGScene
         AGSoundManager.vrMusic.setVolume(0.6f, 0.6f);
         AGSoundManager.vrMusic.play();
 
-        botao = this.createSprite(R.mipmap.btnjogar, 1,1);
-        botao.setScreenPercent(25,15);
+        jogar = this.createSprite(R.mipmap.play, 1, 1);
+        jogar.setScreenPercent(25, 15);
+
+        creditos = this.createSprite(R.mipmap.credits, 1, 1);
+        creditos.setScreenPercent(25, 15);
+
+        sair = this.createSprite(R.mipmap.exit, 1, 1);
+        sair.setScreenPercent(25, 15);
+
+        nomeJogo = this.createSprite(R.mipmap.nome, 1, 1);
+        nomeJogo.setScreenPercent(40, 40);
 
         //Altura e Largura
-        botao.vrPosition.setX(AGScreenManager.iScreenWidth/2);
-        botao.vrPosition.setY(AGScreenManager.iScreenHeight/2);
+        nomeJogo.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 1.2f);
+        jogar.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 1.7f);
+        creditos.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 2.4f);
+        sair.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 3.9f);
     }
 
     @Override
@@ -54,7 +68,7 @@ public class CenaAbertura extends AGScene
     {
         if (AGInputManager.vrTouchEvents.screenClicked())
         {
-            if (botao.collide(AGInputManager.vrTouchEvents.getLastPosition()))
+            if (jogar.collide(AGInputManager.vrTouchEvents.getLastPosition()))
             {
 
                 this.vrGameManager.setCurrentScene(1);
@@ -62,9 +76,32 @@ public class CenaAbertura extends AGScene
             }
         }
 
+        if (AGInputManager.vrTouchEvents.screenClicked()) {
+            if (jogar.collide(AGInputManager.vrTouchEvents.getLastPosition())) {
+
+                this.vrGameManager.setCurrentScene(2);
+                return;
+            }
+        }
+
+        if (AGInputManager.vrTouchEvents.screenClicked()) {
+            if (sair.collide(AGInputManager.vrTouchEvents.getLastPosition())) {
+
+                this.vrGameManager.vrActivity.finish();
+                return;
+            }
+        }
+
         if(AGInputManager.vrTouchEvents.backButtonClicked())
         {
             this.vrGameManager.release();
+        }
+
+        if (AGInputManager.vrTouchEvents.screenClicked()) {
+            if (creditos.collide(AGInputManager.vrTouchEvents.getLastPosition())) {
+                this.vrGameManager.setCurrentScene(3);
+                return;
+            }
         }
     }
 }

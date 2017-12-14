@@ -143,19 +143,19 @@ public class CenaGame extends AGScene {
         do {
             double rand = Math.random();
             if (rand >= 0.8f && cometas[0].vrPosition.getY() >= AGScreenManager.iScreenHeight) {
-                cometas[0].moveTo(1000, cometas[0].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
+                cometas[0].moveTo(1500, cometas[0].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
                 i++;
             } else if (rand >= 0.6f && rand < 0.8f && cometas[1].vrPosition.getY() >= AGScreenManager.iScreenHeight) {
-                cometas[1].moveTo(1000, cometas[1].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
+                cometas[1].moveTo(1500, cometas[1].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
                 i++;
             } else if (rand >= 0.4f && rand < 0.6f && cometas[2].vrPosition.getY() >= AGScreenManager.iScreenHeight) {
-                cometas[2].moveTo(1000, cometas[2].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
+                cometas[2].moveTo(1500, cometas[2].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
                 i++;
             } else if (rand >= 0.2f && rand < 0.4f && cometas[3].vrPosition.getY() >= AGScreenManager.iScreenHeight) {
-                cometas[3].moveTo(1000, cometas[3].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
+                cometas[3].moveTo(1500, cometas[3].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
                 i++;
             } else if (rand >= 0.0f && rand < 0.4f && cometas[4].vrPosition.getY() >= AGScreenManager.iScreenHeight) {
-                cometas[4].moveTo(1000, cometas[4].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
+                cometas[4].moveTo(1500, cometas[4].vrPosition.getX(), (AGScreenManager.iScreenHeight - AGScreenManager.iScreenHeight) - 130);
                 i++;
             }
 
@@ -182,14 +182,14 @@ public class CenaGame extends AGScene {
 
 
         //Detector de colisões
-       /* if( colisao(dino, cometas[0]) || colisao(dino, cometas[1]) || colisao(dino, cometas[2])|| colisao(dino, cometas[3]) || colisao(dino, cometas[4]))
+        if (colisao(dino, cometas[0]) || colisao(dino, cometas[1]) || colisao(dino, cometas[2]) || colisao(dino, cometas[3]) || colisao(dino, cometas[4]))
         {
             dino.bVisible = false;
             timeValue = 0;
             this.vrGameManager.setCurrentScene(2);
             return ;
         }
-*/
+
 
         //Trata a movimentação para a direita, quando o acelerômetro tem valores positivos, sempre rotacionando o Sprite para .NONE
         if (AGInputManager.vrAccelerometer.getAccelX() > 1.0f && dino.vrPosition.getX() <= ((float) AGScreenManager.iScreenWidth) - 75) {

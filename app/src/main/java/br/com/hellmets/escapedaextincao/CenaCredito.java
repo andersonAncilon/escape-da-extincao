@@ -6,35 +6,34 @@ import br.com.hellmets.escapedaextincao.AndGraph.AGScene;
 import br.com.hellmets.escapedaextincao.AndGraph.AGScreenManager;
 import br.com.hellmets.escapedaextincao.AndGraph.AGSprite;
 
+/**
+ * Created by splatter on 14/12/2017.
+ */
 
-public class CenaGameOver extends AGScene {
+public class CenaCredito extends AGScene {
 
+    AGSprite credito = null;
 
-    AGSprite gameOver = null;
-    AGSprite dinoMorto = null;
-
-    public CenaGameOver(AGGameManager manager) {
-        super(manager);
+    public CenaCredito(AGGameManager pManager) {
+        super(pManager);
     }
 
     @Override
     public void init() {
-        gameOver = this.createSprite(R.mipmap.youlose, 1, 1);
-        gameOver.setScreenPercent(40, 35);
-        gameOver.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 1.5f);
+        credito = this.createSprite(R.mipmap.creditos, 1, 1);
+        credito.setScreenPercent(50, 50);
 
-        dinoMorto = this.createSprite(R.mipmap.pterav, 4, 4);
-        dinoMorto.setScreenPercent(15, 25);
-        dinoMorto.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 2);
-        dinoMorto.addAnimation(5, true, 9, 15);
-    }
-
-    @Override
-    public void stop() {
+        credito.vrPosition.setXY(AGScreenManager.iScreenWidth / 2, AGScreenManager.iScreenHeight / 2);
     }
 
     @Override
     public void restart() {
+
+    }
+
+    @Override
+    public void stop() {
+
     }
 
     @Override
@@ -48,7 +47,6 @@ public class CenaGameOver extends AGScene {
             this.vrGameManager.setCurrentScene(0);
             return;
         }
+
     }
-
-
 }
